@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Travel Blog</title> 
+    <link rel="stylesheet" href="travelstyle.css"> 
+    <style>
+      div.animation {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #65CEF9 ;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 100;
+  animation-direction: alternate; 
+}
+@keyframes example {
+  0%   {background-color:#65CEF9 ; left:0px; top:0px;}
+  100% {background-color:#65CEF9 ; left:1300px; top:0px;}
+}
+    </style>
+  </head>
+  <body id="sanjuanbackground">
+    <h1 id="sanjuan">San Juan, PR</h1>
+    <div class="animation"></div>
+    <h2 id="sjcw">Search "San Juan, PR" for Current Weather</h2>
+     
+
+    <div class="row" >
+        <div class="col-md-12" style="margin-bottom:10px;">
+            <h3 class="text-center text-primary"></h3>
+            <span id="error" class="text-center"></span>
+        </div>
+        
+        <div class="row form-group form-inline" id="cityDiv">
+           
+            <input type="text" name="city" id="city" class="form-control" placeholder="Enter city name" >
+            <button id="submitCity" class="btn btn-primary">Search City</button>
+        </div>
+
+    </div>
+    
+    <div id="showWeather"></div>
+
+   <div class="flex1"> 
+     <div class="container1"><img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanjuan.jpeg?v=1710805854992">
+  </div></div>
+    
+     <p class="sanjuan">San Juan, Puerto Rico's capital, is located in the Caribbean, alongside Cuba, Haiti, and the Dominican Republic. It is alive with color, culture, and nightlife. There are numerous attractions to see while in San Juan that explore the country's culture and history. There is something for everyone, whether they enjoy relaxing on the beach, trying new foods, learning about history, or experiencing new cultures. It's a charming city with plenty of enticing offers. </p>
+     
+     <div class="flex1"> 
+      <div class="container1"><img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanjuan2.jpeg?v=1710805855855">
+   </div></div>
+
+     <p class="sanjuan">This tropical destination is ideal for first-time travelers or families looking to explore a new, easy-to-navigate destination. Although the majority of San Juan residents speak Spanish, many also speak English as a second language. Another useful travel tip is that Puerto Rico uses the US Dollar as its currency, which makes currency exchange easier because one knows the true value of the items being purchased. This is a destination I recommend going either through air travel or on a cruise as this is a common place where cruises make stops for visitors. </p>
+    
+    <div class="flex1"> 
+      <div class="container1"><img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanjuan3.jpeg?v=1710805856097">
+   </div></div>
+
+<div class="visit">
+<h2>Some Places to Visit:</h2>
+    <ul class="myUL">
+  <li>Viejo San Juan</li>
+  <li>Castillo San Felipe del Morro</li>
+  <li>Plaza Las Americas</li>
+  <li>Las Americas Museum</li>
+  <li>Puerta de San Juan</li>
+  <li>El Yunque National Forest</li>
+</ul>
+</div>
+  
+  <div class="flex1"> 
+    <div class="container1"><a href="sanjuanmap.html"><p style="color:white; font-size: 25px">Interact With My Mapbox!</p><img src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanjuanmap.jpeg?v=1710891557250"></a></div></div>
+
+<div class="facts">
+<h2>Fun Facts:</h2>
+    <ul class="myUL">
+  <li>Americans do not need a passport to visit.</li>
+  <li>San Juan is one of the oldest cities in the Americas.</li>
+  <li>It has vibrant music like salsa constantly playing.</li>
+  <li>The Cathedral of San Juan is a must-do place to visit.</li>
+  <li>They have a national amphibian that remains in the island of Puerto Rico called Coqui. It will die if removed from the native land.</li>
+  <li>Puerto Rico is about the size of Connecticut.</li>
+</ul></div>
+
+
+<div class="flex1"> 
+      <div class="container1"><img class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanjuan4.jpeg?v=1710805859776"></div></div>
+ 
+<br>
+<div class="centered">
+  <div class="button1"><a href="travel.html">Travel Home Page </a></div>
+    <div class="button1"><a href="sanjuan.html">San Juan, PR </a></div>
+    <div class="button1"><a href="paris.html">Paris, FR</a></div>
+    <div class= "button1"><a href="sanfran.html"> San Francisco, CA</a></div>
+    <div class="button1"><a href="index.html">Odalys' Home Page </a></div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>        
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+     
+<script src="sanjuanweather.js"></script> 
+
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>San Juan</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+.mapboxgl-popup {
+max-width: 400px;
+font: 14px/22px 'Comic Sans MS', sans-serif;
+}
+</style>
+<div id="map"></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoib2RhbHlzMjE5IiwiYSI6ImNscGhlMjlsYzA1d3MyanFkc3RzdjcwcnkifQ.savOp2pJ58_hivBVPlfJNw';
+const map = new mapboxgl.Map({
+container: 'map',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+style: 'mapbox://styles/mapbox/streets-v12',
+center: [-66.096340, 18.347152],
+zoom: 10.5
+});
+map.addControl(new mapboxgl.FullscreenControl());
+map.on('load', () => {
+map.addSource('places', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Viejo San Juan</strong><p>A San Juan National Historic Site. With buildings dating up to the 16th century. Colorful homes line the streets where you can take photos and drink famous cocktails alongside Puerto Rican styled restaurants.</p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.116132, 18.465620]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Castillo San Felipe del Morro</strong><p>Also known as El Morro, is a large fortress located in Viejo San Juan. It was commissioned by Charles the First of Spain in 1539. Its was built as a honor to Philip the Second. It was finished just in time before the British attacked Puerto Rico in 1797. </p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.124113, 18.470460]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Plaza Las Americas</strong><p>The first indoor shopping mall in San Juan. The largest shopping mall in the Caribbean and the second largest in Latin America.</p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.073204, 18.422217]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Las Americas Museum</strong><p>A museum that has ranging exhibits from pre-Columbian times to modern art of today..</p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-66.119779, 18.467701]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+"<strong>Puerta de San Juan</strong><p>A San Juan Historical Landmark. Built in 1635, this door was previously the main entrance to San Juan during the Spanish Colonial area. </p>"
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [ -66.119531, 18.465094]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>El Yunque National Forest</strong><p>A tropical rainforest that includes everything from hiking trails, waterfalls and native animals like the Coqui frogs. In some areas you can find petroglyphs which were made by the indegenous Taino people.</p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-65.800000, 18.295007]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Independence Park</strong><p>A landmark dedicated to the founding fathers of the Dominican Republic. It honors the nations heroes who fought for the countrys independence on February 27, 1844. Francisco del Rosario Sanchez rasied the first dominican flag on independence day. </p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-69.891936, 18.471320]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+"<strong>Malecon</strong><p>A boulevard filled with hotspots of food, nightlife and parks. It is well known for its walkable and biking pathways. </p>"
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-69.886892, 18.468434]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<strong>Faro a Colon, Columbus Lighthouse</strong><p>A lighthouse museum dedicated to Christopher Columbus. Its the largest memorial dedicated to Columbus where lights shine through the sky and make a cross. It can be seen much throughout Santo Domingo. </p>'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-69.868758, 18.478778]
+}
+}
+]
+}
+});
+// Add a layer showing the places.
+map.addLayer({
+'id': 'places',
+'type': 'circle',
+'source': 'places',
+'paint': {
+'circle-color': '#E0115F',
+'circle-radius': 6,
+'circle-stroke-width': 2,
+'circle-stroke-color': '#D8BFD8'
+}
+});
+ 
+// Create a popup, but don't add it to the map yet.
+const popup = new mapboxgl.Popup({
+closeButton: false,
+closeOnClick: false
+});
+ 
+map.on('mouseenter', 'places', (e) => {
+// Change the cursor style as a UI indicator.
+map.getCanvas().style.cursor = 'pointer';
+ 
+// Copy coordinates array.
+const coordinates = e.features[0].geometry.coordinates.slice();
+const description = e.features[0].properties.description;
+ 
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+ 
+// Populate the popup and set its coordinates
+// based on the feature found.
+popup.setLngLat(coordinates).setHTML(description).addTo(map);
+});
+ 
+map.on('mouseleave', 'places', () => {
+map.getCanvas().style.cursor = '';
+popup.remove();
+});
+});
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Travel Blog</title>
+    <link rel="stylesheet" href="travelstyle.css">
+    <style>
+      div.animation {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #BB565B;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 100;
+  animation-direction: alternate; 
+}
+@keyframes example {
+  0%   {background-color:#BB565B; left:0px; top:0px;}
+  100% {background-color:#BB565B; left:1300px; top:0px;}
+}
+    </style>
+  </head>
+  <body id="sanfranbackground">
+    <h1 id="sanfran">San Francisco, CA</h1>
+    <div class="animation"></div>
+    <h2 id="sfcw">Search "San Francisco, US" for Current Weather</h2>
+    
+    <div class="row" >
+        <div class="col-md-12" style="margin-bottom:10px;">
+            <h3 class="text-center text-primary"></h3>
+            <span id="error" class="text-center"></span>
+        </div>
+        
+        <div class="row form-group form-inline" id="cityDiv">
+           
+            <input type="text" name="city" id="city" class="form-control" placeholder="Enter city name" >
+            <button id="submitCity" class="btn btn-primary">Search City</button>
+        </div>
+
+    </div>
+    
+    <div id="showWeather"></div>
+
+
+   <div class="flex1"> 
+     <div class="container4">
+     <img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanfran.jpeg?v=1710805847788">  
+     </div></div> 
+    
+     <p class="sanjuan">San Francisco, located in Northern California and five hours from Los Angeles, is a large city full of vibrant energy. It is regarded as the birthplace of diversity and inclusion, making it an ideal destination for those looking to discover new ideals and ways of thinking. This is a great place for people who want to learn about the west coast of the United States. It is a large walkable city with many modes of transportation and many landmarks, making it a great place to continue exploring even if you have been there previously.  </p>
+     
+     <div class="flex1"> 
+     <div class="container4">
+     <img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanfran2.jpeg?v=1710805848095">  
+     </div></div>
+
+     <p class="sanjuan">With its steep roads and numerous filming locations, this city has become iconic in many ways. One of the defining features of San Francisco are the Victorian-style homes, such as The Painted Ladies, which have played an important role in the city's identity for many years. Popular series and movies have established themselves in the city, attracting a large number of tourists. This is an excellent location for people who enjoy exploring a city by foot, having fun on unexpected streets, and living a free lifestyle.</p>
+    
+    <div class="flex1"> 
+     <div class="container4">
+      <img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanfran4.jpeg?v=1710805848976"> 
+     </div></div>
+
+<div class="visit">
+<h2>Some Places to Visit:</h2>
+    <ul class="myUL">
+  <li>Pier 39</li>
+  <li>Lombard Street</li>
+  <li>Golden Gate Bridge</li>
+  <li>Alcatraz Island</li>
+  <li>Ghirardelli Chocolate Experience</li>
+  <li>Fisherman's Wharf</li>
+  <li>The Painted Ladies</li>
+</ul></div>
+
+<div class="flex1"> 
+    <div class="container4"><a href="sanfranmap.html"><p style="color:white; font-size: 25px">Interact With My Mapbox!</p><img src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanfranmap.jpeg?v=1710894305775"></a></div></div>
+
+
+<div class="facts">
+<h2>Fun Facts:</h2>
+    <ul class="myUL">
+  <li>The Golden Gate Bridge was meant to be black and gold.</li>
+  <li>The infamous fog has a name: Karl. </li>
+  <li>The most crooked street: Lombard Street. </li>
+  <li>The fortune cookie was invented in San Francisco.  </li>
+  <li>Has the second largest Chinatown outside of Asia.  </li>
+  <li>About 100 earthquakes happen a year but are very small. </li>
+</ul></div>
+
+<div class="flex1"> 
+     <div class="container4">
+     <img  class="front" src="https://cdn.glitch.global/81ee2d2d-7a63-4ee2-af83-a1cf2c2d0924/sanfran5.jpeg?v=1710805849370">  
+     </div></div>
+ 
+<br>
+<div class="centered">
+  <div class="button3"><a href="travel.html">Travel Home Page </a></div>
+    <div class="button3"><a href="sanjuan.html">San Juan, PR </a></div>
+    <div class="button3"><a href="paris.html">Paris, FR</a></div>
+    <div class= "button3"><a href="sanfran.html"> San Francisco, CA</a></div>
+    <div class="button3"><a href="index.html">Odalys' Home Page </a></div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>        
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+     
+<script src="sanjuanweather.js"></script>   
+  </body>
+</html>

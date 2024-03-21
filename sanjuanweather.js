@@ -13,7 +13,7 @@ function getWeather(){
     if(city != ''){
         
         $.ajax({
-           url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
+           url: 'https://api.openweathermap.org/data/2.5/weather?q=Paris,FR&units=imperial&APPID=c10bb3bd22f90d636baa008b1529ee25&callback=jQuery31108790355630385875_1710985332210&_=1710985332211',
             type: "GET",
             dataType: "jsonp",
             success: function(data){
